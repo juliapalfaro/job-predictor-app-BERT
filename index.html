@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Righty – Smarter Job Applications</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">Righty</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About us</a></li>
+        <li><a href="{{ url_for('how') }}">How it works</a></li>
+        <li><a href="{{ url_for('predict') }}">Make a prediction</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero-header">
+    <h1>Welcome to Righty</h1>
+    <h2>Apply smarter. Know where you stand before you click send.</h2>
+  </header>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <p>Follow us on:</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p>&copy; 2025 Righty. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

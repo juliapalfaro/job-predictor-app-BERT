@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Righty – Smarter Job Applications</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">Righty</div>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About us</a></li>
+        <li><a href="{{ url_for('how') }}">How it works</a></li>
+        <li><a href="{{ url_for('predict') }}">Make a prediction</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Job Experience & Salary Predictor</h2>
+
+    <form method="POST">
+      <textarea name="job_text" rows="10" cols="60" placeholder="Paste job advert here..." required></textarea><br>
+      <input type="checkbox" id="disclaimer" name="disclaimer" required>
+      <label for="disclaimer">
+        I understand that the predictions provided are estimates, not guarantees, and should be used to supplement, not replace, personal judgement.
+      </label><br><br>
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if error %}
+    <div class="error-message">{{ error }}</div>
+    {% endif %}
+
+    {% if result %}
+    <div class="result-section">
+      <h3>Prediction Results</h3>
+      <p><strong>Experience Level:</strong> {{ result.experience }}</p>
+      <p><strong>Predicted Salary:</strong> {{ result.salary }}</p>
+      <p><strong>Model Confidence:</strong> {{ result.confidence }}%</p>
+
+      <hr>
+      <button onclick="toggleMetrics()">View Evaluation Metrics</button>
+
+      <div id="metrics-section" style="display: none; margin-top: 15px;">
+        <h4>Model Evaluation Summary</h4>
+        <p><strong>Accuracy:</strong> 67%</p>
+        <p><strong>Macro F1-score:</strong> 0.66</p>
+        <p>This model was trained and tested on 150 real job adverts across five experience levels (Graduate to Lead).</p>
+
+        <div class="image-wrapper">
+          <img src="{{ url_for('static', filename='bert_confusion_matrix.png') }}" alt="Confusion Matrix">
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <p>Follow us on:</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p>&copy; 2025 Righty. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMetrics() {
+      const section = document.getElementById("metrics-section");
+      section.style.display = section.style.display === "none" ? "block" : "none";
+    }
+  </script>
+</body>
+</html>
+

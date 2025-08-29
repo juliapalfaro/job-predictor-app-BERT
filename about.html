@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Righty – Smarter Job Applications</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">Righty</div>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About us</a></li>
+        <li><a href="{{ url_for('how') }}">How it works</a></li>
+        <li><a href="{{ url_for('predict') }}">Make a prediction</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="about-section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>
+        <strong>Righty</strong> was born out of a desire to make life easier for people who are job hunting.
+        From personal experience, we know how stressful that process already is. What makes it worse is the
+        feeling that many companies and recruitment platforms aren’t really trying to simplify the journey for applicants.
+      </p>
+      <p>
+        Too often, job adverts lack essential information — like the required experience level or the salary range.
+        This leads many people, unsure if they’re a good fit, to apply “just in case.” The result? Job postings become
+        flooded with irrelevant applications, and the hiring process becomes overwhelming for everyone involved.
+      </p>
+      <p>
+        This platform exists to address that problem.
+      </p>
+      <p>
+        By using advanced machine learning, <strong>Righty</strong> predicts missing job details like experience level and salary range.
+        The goal is to help applicants feel more confident in their decisions — and to encourage companies to realize that
+        behind every application is a real person who deserves clarity and respect.
+      </p>
+      <p>
+        We're here to make job applications smarter, and recruitment more human.
+      </p>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <p>Follow us on:</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p>&copy; 2025 Righty. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
